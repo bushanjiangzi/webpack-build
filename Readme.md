@@ -1,6 +1,6 @@
 # fusionCharts
 
-> iot-custom-chart
+# iot-custom-chart
 
 ## Build Setup
 

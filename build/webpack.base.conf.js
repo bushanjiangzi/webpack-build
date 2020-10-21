@@ -1,5 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const pages = require('../config/index.js')
 
 const entryObj = function () {
@@ -47,7 +48,14 @@ switch (process.env.NODE_ENV) {
 }
 module.exports = {
   entry: entryObj(),
-  plugins: htmlPluginArr,
+  plugins: htmlPluginArr.concat([new CompressionWebpackPlugin({
+    filename: '[name].gz[query]',
+    algorithm: 'gzip',
+    test: /\.js$|\.css$/,
+    threshold: 10240,
+    minRatio: 0.8,
+    deleteOriginalAssets: false
+  })]),
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../src/')
