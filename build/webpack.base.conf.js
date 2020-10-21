@@ -8,7 +8,6 @@ const entryObj = function () {
   pages.forEach((item) =>{
     obj[item.name] = item.entryFile
   })
-  obj.main = './src/main.js'
   return obj
 }
 
@@ -28,9 +27,10 @@ const htmlPluginArr = pages.map((item) => {
   return new HtmlWebpackPlugin({
     title: item.title,
     filename: outputPath,
-    template: path.resolve(__dirname, '../config/template.html'),
+    template: item.name === 'index' ? path.resolve(__dirname, '../public/index.html') : path.resolve(__dirname, '../config/template.html'),
     hash: true,
-    chunks: [item.name]
+    chunks: [item.name],
+    favicon: path.resolve(__dirname, '../public/favicon.ico')
   })
 })
 

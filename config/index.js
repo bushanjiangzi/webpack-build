@@ -1,5 +1,11 @@
 module.exports = [
   {
+    title: '主页',
+    name: 'index',
+    outputPath: 'index',
+    entryFile: './src/main.js'
+  },
+  {
     title: '登录',
     name: 'login',
     outputPath: 'login',
