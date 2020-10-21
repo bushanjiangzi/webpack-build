@@ -7,15 +7,9 @@ const baseConf = require('./webpack.base.conf')
 
 const prodConfig = {
   mode: 'production',
-  entry: {
-    main: path.resolve(__dirname, '../src/main.js'),
-    vendor: [
-      'jquery'
-    ]
-  },
   devtool: 'none',
   output: {
-    filename: 'bundle.[contenthash].js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, '../dist/')
   },
   plugins: [

@@ -4,7 +4,6 @@ const baseConfig = require('./webpack.base.conf')
 
 const devConf = {
   mode: 'development',
-  entry: './src/main.js',
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, '../dist')
@@ -18,7 +17,7 @@ const devConf = {
     hot: true,
     open: true,
     proxy: {
-      '/api/saas/': 'http://10.10.9.26:8090/' // 测试服务器
+      // '/api/saas/': 'http://10.10.9.26:8090/' // 测试服务器
     }
   }
 }

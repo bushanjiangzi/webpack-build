@@ -4,9 +4,9 @@
   "description": "custom-charts",
   "main": "index.js",
   "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open webpack --config ./build/webpack.dev.conf.js",
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.conf.js",
-    "build:test": "cross-env NODE_ENV=test webpack --config ./build/webpack.test.conf.js",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open webpack --config ./build/webpack.dev.conf.js"
+    "build:test": "cross-env NODE_ENV=test webpack --config ./build/webpack.test.conf.js"
   },
   "author": "grjiangzi@163.com",
   "license": "ISC",
