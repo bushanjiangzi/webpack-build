@@ -27,7 +27,8 @@ const htmlPluginArr = pages.map((item) => {
   return new HtmlWebpackPlugin({
     title: item.title,
     filename: outputPath,
-    template: item.name === 'index' ? path.resolve(__dirname, '../public/index.html') : path.resolve(__dirname, '../config/template.html'),
+    // template: item.name === 'index' ? path.resolve(__dirname, '../public/index.html') : path.resolve(__dirname, '../config/template.html'),
+    template: path.resolve(__dirname, item.template),
     hash: true,
     chunks: [item.name],
     favicon: path.resolve(__dirname, '../public/favicon.ico')

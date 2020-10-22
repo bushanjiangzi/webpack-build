@@ -17,12 +17,12 @@ const prodConfig = {
       root: path.resolve(__dirname, '../dist'),
       dry: false // 启用删除文件
     }),
-    new CopyWebpackPlugin({
-      patterns: [{
-        from: path.resolve(__dirname, '../public'),
-        to: '../dist'
-      }]
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [{
+    //     from: path.resolve(__dirname, '../public'),
+    //     to: '../dist'
+    //   }]
+    // }),
     new webpack.DefinePlugin({
     	'process.env.NODE_ENV': JSON.stringify('production')
     }), // 在非nodejs环境中定义环境进行相应的区分
