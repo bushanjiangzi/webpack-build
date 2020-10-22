@@ -1,7 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
-const pages = require('../config/index.js')
+const pages = require('../config/router.js')
 
 const entryObj = function () {
   let obj = {}
