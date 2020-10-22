@@ -4,12 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <title>图表自动生成页面工具</title>
+  <link rel="stylesheet" href="./public/css/common.css">
 </head>
 <body>
-  <div id="app">
+  <div id="app" onclick="appClick">
     图表自动生成页面工具
   </div>
   <a href="/login.html">登录-></a>
   <a href="/center.html">个人中心-></a>
+
+  <script type="text/javascript" src="./public/js/jquery.min.js"></script>
+  <script>
+    let dom = $('#app');
+    console.log('dom', dom);
+  </script>
 </body>
 </html>

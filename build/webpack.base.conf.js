@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const pages = require('../config/router.js')
 
 const entryObj = function () {
@@ -35,16 +36,16 @@ const htmlPluginArr = pages.map((item) => {
   })
 })
 
-let maintHtml = ''
+let toPath = ''
 switch (process.env.NODE_ENV) {
   case 'production':
-    maintHtml = '../dist/index.html'
+    toPath = path.resolve(__dirname, '../dist/public')
     break
   case 'development':
-    maintHtml = '../dist/index.html'
+    toPath = path.resolve(__dirname, '../dist/public')
     break
   case 'test':
-    maintHtml = '../dist-test/index.html'
+    toPath = path.resolve(__dirname, '../dist-test/public')
     break
 }
 module.exports = {
@@ -56,6 +57,11 @@ module.exports = {
     threshold: 10240,
     minRatio: 0.8,
     deleteOriginalAssets: false
+  }), new CopyWebpackPlugin({
+    patterns: [{
+      from: path.resolve(__dirname, '../public'),
+      to: toPath
+    }]
   })]),
   resolve: {
     alias: {
@@ -64,6 +70,13 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
       {
         test: /\.scss$/,
         use: [

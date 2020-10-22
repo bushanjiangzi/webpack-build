@@ -20,7 +20,7 @@ const prodConfig = {
     // new CopyWebpackPlugin({
     //   patterns: [{
     //     from: path.resolve(__dirname, '../public'),
-    //     to: '../dist'
+    //     to: '../dist/public'
     //   }]
     // }),
     new webpack.DefinePlugin({
