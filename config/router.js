@@ -11,13 +11,13 @@ module.exports = [
     name: 'login',
     outputPath: 'login',
     entryFile: './src/views/login/login.js',
-    template: '../src/views/login/index.html'
+    template: '../src/views/login/login.html'
   },
   {
     title: '个人中心',
     name: 'center',
     outputPath: 'center',
     entryFile: './src/views/center/center.js',
-    template: '../src/views/center/index.html'
+    template: '../src/views/center/center.html'
   }
 ]
